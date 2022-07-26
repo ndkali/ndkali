@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .row {
+            flex-direction: row;
+        }
+
+        .gdt {
+            overflow: auto;
+        }
+
+        .page-container {
+            height: 100%;
+        }
+
+        /* 空间分布 */
+        .flex1 {
+            justify-content: space-between;
+        }
+
+        .flex2 {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-container .nav-left {
+            height: 100%;
+            width: 220px;
+            background-color: rgb(61, 59, 59)
+        }
+
+        .page-container .nav-left .nav-left-top {
+            height: 13vh;
+            border-bottom: solid 1px blanchedalmond;
+        }
+
+        .page-container .nav-left .nav-left-meun {
+            height: 77vh
+        }
+
+        .list {
+
+            color: aliceblue;
+            list-style: none;
+
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        .page-container .nav-left .nav-left-bottom {
+            height: 1vh;
+            color: white;
+            padding: 10px
+        }
+
+        .main-content {
+            flex: 1;
+
+        }
+
+        .main-content .main-header {
+            height: 13vh;
+            background-color: white;
+        }
+
+        .main-content .web-content {
+            height: 90vh;
+            background-color: rgb(248, 249, 250);
+        }
+
+
+        .blo-content {
+            /* padding: 5px; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+
+        .litt-blo {
+            height: 190px;
+            flex: 20%;
+            background-color: white;
+            margin: 10px;
+            box-shadow: 3px 3px 2px rgb(194, 195, 196);
+            border-radius: 10px;
+        }
+
+        @media (max-width:600px) {
+            .page-container .nav-left {
+                display: none;
+            }
+
+            .litt-blo {
+                flex: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-container flex">
+        <!-- 左侧导航菜单，可隐藏 -->
+        <div class="nav-left column">
+            <div class="nav-left-top flex flex2">
+                <img alt="logo" src="/photo/wallhaven-9myvvx.jpg" width="50px" height="50px" style="border-radius:50%">
+                <div style="margin-left:10px">NDkaili</div>
+            </div>
+            <div class="nav-left-meun column gdt">
+                <li class="list">导航</li>
+                <li class="list">导航</li>
+                <li class="list">导航</li>
+                <li class="list">导航</li>
+                <li class="list">导航</li>
+                <li class="list">导航</li>
+                <li class="list">导航</li>
+                <li class="list">导航</li>
+            </div>
+            <div class="nav-left-bottom">
+                <p href="">网站申请</p>
+            </div>
+        </div>
+        <!-- 右侧具体网址 -->
+        <div class="main-content flex column">
+            <div class="main-header"></div>
+            <div class="web-content gdt">
+                <!-- 具体模块 -->
+                <div class="block">
+                    <div class="blo-head">导航</div>
+                    <div class="blo-content">
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="blo-head">导航</div>
+                    <div class="blo-content">
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                    </div>
+                </div>
+
+                <div class="block">
+                    <div class="blo-head">导航</div>
+                    <div class="blo-content">
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                        <div class="litt-blo"></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="tool"></div> -->
+        </div>
+    </div>
+</body>
+
+</html>
