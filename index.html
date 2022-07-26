@@ -152,6 +152,21 @@
         background-color: rgba(1, 1, 1, 0.2);
         border-radius: 10px;
     }
+
+    @media (max-width:600px) {
+        .content .headers .search-box button {
+            display: none;
+        }
+
+        .main-con {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-con .left {
+            display: none;
+        }
+    }
 </style>
 
 <body>
@@ -209,7 +224,7 @@
                     <h1>
                         滚动条
                     </h1>
-                    <hr>
+                
                     <p>正文</p>
                 </div>
                 <div class="lit-blo">
