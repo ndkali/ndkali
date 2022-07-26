@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,206 @@
     <title>Document</title>
 </head>
 <style>
-    *{
-        padding:0;
-        margin:0;
+    * {
+        padding: 0;
+        margin: 0;
 
     }
-    body{
-        background-image: url("photo/v2-09ff860927bc725b3d8e718cf73b5085_r.jpg");
+
+    body {
+        background-color: rgb(240, 207, 198);
         opacity: 0.8;
+        height: 100vh;
     }
-    .nav{
-        width:100%;
-        height:64px;
-        position:fixed;
-        background-color: rgba(1,1,1,0.2);
+
+
+    .headers {
+        width: 100%;
+        height: 64px;
+        background-color: rgba(1, 1, 1, 0.2);
         text-align: center;
     }
-    .nav li{
-        display:inline-block;
-        height:60px;
-        line-height: 60px;
-        margin-right: 80px;
+
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex1 {
+        display: flex;
+
+        justify-content: flex-start;
+    }
+
+    .style1 {
+        margin: 20px;
+        padding: 10px;
+        background-color: rgba(1, 1, 1, 0.2);
+        border-radius: 10px;
+    }
+
+    .gdt {
+        overflow-y: auto;
+    }
+
+    *::-webkit-scrollbar {
+        width: 10px;
+
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: rgb(210, 195, 195);
+        border-radius: 5px;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background: rgb(151, 122, 122);
+
+    }
+
+
+    * {
+        scrollbar-width: 10px;
+        scrollbar-base-color: green;
+        scrollbar-track-color: red;
+        scrollbar-arrow-color: blue;
+    }
+
+
+
+
+    .left {
+        width: 240px;
+        height: 80vh;
+        background-color: rgba(1, 1, 1, 0.2);
+        margin: 20px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .left li {
+        list-style: none;
+        margin: 20px 0 0 30px;
+    }
+
+    .right li {
+        list-style: none;
+        margin: 15px 0 10px 10px;
+    }
+
+    .right {
+        flex: 1;
+
+    }
+
+
+
+    .middle {
+        flex: 3;
+        max-height: 90vh
+    }
+
+    .middle .lit-blo {
+        margin: 20px;
+        padding: 10px;
+        background-color: rgba(1, 1, 1, 0.2);
+        border-radius: 10px;
     }
 </style>
+
 <body>
-    <div class="nav">
-        <li class="1">首页</li>
-        <li class="1">个人中心</li>
-        <li class="1">设置</li>
-        <li class="1">unknow</li>
-        <li class="1">unknow</li>
+    <div class="content">
+        <!-- 顶层导航栏 -->
+        <div class="headers flex">
+            <div class="flex" style="padding:0 20px">
+                <img alt="logo" src="#">
+                <div style="margin-left:10px">NdKali</div>
+            </div>
+            <div class="search-box " style="margin:0 20px">
+                <input>
+                <button>submit</button>
+            </div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="main-con flex1 ">
+            <div class="left gdt">
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+                <li>文章目录</li>
+            </div>
+
+            <div class="middle gdt">
+                <div class="lit-blo">
+                    <h1>标题</h1>
+                    <p>AES的全称是Advanced Encryption
+                        Standard，意思是高级加密标准。它的出现主要是为了取代DES加密算法的，因为我们都知道DES算法的密钥长度是56Bit，因此算法的理论安全强度是2的56次方。但二十世纪中后期正是计算机飞速发展的阶段，元器件制造工艺的进步使得计算机的处理能力越来越强，虽然出现了3DES的加密方法，但由于它的加密时间是DES算法的3倍多，64Bit的分组大小相对较小，所以还是不能满足人们对安全性的要求。于是1997年1月2号，美国国家标准技术研究所宣布希望征集高级加密标准，用以取代DES。AES也得到了全世界很多密码工作者的响应，先后有很多人提交了自己设计的算法。最终有5个候选算法进入最后一轮：Rijndael，Serpent，Twofish，RC6和MARS。最终经过安全性分析、软硬件性能评估等严格的步骤，Rijndael算法获胜。
+
+                        在密码标准征集中，所有AES候选提交方案都必须满足以下标准：
+
+                        分组大小为128位的分组密码。
+                        必须支持三种密码标准：128位、192位和256位。
+                        比提交的其他算法更安全。
+                        在软件和硬件实现上都很高效。
+                        AES密码与分组密码Rijndael基本上完全一致，Rijndael分组大小和密钥大小都可以为128位、192位和256位。然而AES只要求分组大小为128位，因此只有分组长度为128Bit的Rijndael才称为AES算法。本文只对分组大小128位，密钥长度也为128位的Rijndael算法进行分析。密钥长度为192位和256位的处理方式和128位的处理方式类似，只不过密钥长度每增加64位，算法的循环次数就增加2轮，128位循环10轮、192位循环12轮、256位循环14轮。
+                    </p>
+                </div>
+                <div class="lit-blo">
+
+                    <h1>
+                        滚动条
+                    </h1>
+                    <hr>
+                    <p>正文</p>
+                </div>
+                <div class="lit-blo">
+                    <h1>标题</h1>
+                    <p>本文章</p>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="pri-mess style1">
+                    <img alt="#" src="#" width="50px" height="50px">
+                    <div>NdKali</div>
+                    <div>email 3427123791@qq.com</div>
+                </div>
+                <div class="yuandao style1">
+                    <h2><a href="https://www.midorg.com/">元岛</a></h2>
+                    <p>-元岛一个学习型DAO (分布式自治组织) 社区。</p>
+                    <p>-元岛有永久免费的新时代课程和团结互助的社群。</p>
+                    <p>-欢迎加入元岛</p>
+                </div>
+                <div class="tool style1">
+                    <div>常用工具
+                        <li>网站导航</li>
+                        <li>奇思妙想</li>
+                        <li>记录生活</li>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 底部信息 -->
+            <div class="bottom">
+
+            </div>
+        </div>
     </div>
-    
+
 </body>
+
 </html>
