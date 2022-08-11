@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+         }
+         html{
+             background-image:  url(images/QQ图片20210816192757.png);
+             background-size: cover;
+
+         }
+         div {
+             color:black;
+             width:200px;
+             margin: 20vh auto;
+             padding: 30px;
+             background-color:rgba(255,255,255,0.4);
+             border-radius: 10px;
+             
+         }
+         .title {
+             font-size: 20px;
+             margin:10px;
+             text-align: center;
+             padding:2px;
+         }
+         input {
+             color:darkgrey;
+             padding:2px;
+             width:196px; 
+             height:30px;
+             border: none;
+             border-color: rgb(113,121,202);
+             background-color: rgb(255,255,255,0.3);
+         }
+         
+         p:last-child {
+            
+             padding:3px;
+             text-align: center;
+             background-color:rgb(113,121,202);
+              border-radius: 5px;
+         }
+        
+         p button {
+             padding-left: 2px;
+             padding-right: 2px;
+             background-color: rgb(113,121,202);
+            border:none;
+            font-size: 20px;
+            color: white;
+           
+         }
+
+         .warn {
+             font-size: 10px;
+         }
+         .legalTips {
+             color:green;
+         }
+         .lllegalTips {
+             color:red;
+         }
+        
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="title">创建账户</p>
+
+        <p class="item">用户名</p>
+        <input type="text" placeholder="请输入用户名" >
+        <p class="warn">&nbsp</p>
+        
+        <p class="item">密码</p>
+        <input type="password" placeholder="请输入密码">
+        <p class="warn">&nbsp</p>
+
+        <p class="item">确认密码</p>
+        <input  type="password" placeholder="请输入密码">
+        <p class="warn">&nbsp</p>
+
+        <p class="item">手机号码</p>
+        <input type="text" placeholder="请输入电话号码">
+        <p class="warn">&nbsp</p>
+
+        <p><button>提交</button></p>
+    </div>
+    <script>
+        //获取元素
+        var text =document.getElementsByTagName('input');
+        
+        for(var i=0;i<text.length;i++){
+            text[i].onfocus =function(){//获取焦点
+               /* if (this.value==='请输入用户名'||this.value==='请输入密码'||this.value==='请输入电话号码'){
+                    this.value='';
+                }*/
+                this.style.color='black';
+            }
+        }
+        /*text[0].onblur=function(){
+            if(this.value===''){
+                this.value='请输入用户名';
+            }
+            
+        }
+        text[1].onblur=function(){
+            if(this.value===''){
+                this.value='请输入密码';
+            }
+        }
+        text[2].onblur=function(){
+            if(this.value===''){
+                this.value='请输入密码';
+            }
+        }
+        text[3].onblur=function(){
+            if(this.value===''){
+                this.value='请输入电话号码';
+            }
+        }*/
+        var bto = document.getElementsByTagName('button'); 
+        var warns = document.getElementsByClassName('warn');
+        
+        //验证用户名是否合法
+        function checkUsername(text,warn){
+            var reg=/[\d\w\-\_]{4,}/;
+            if(text.value.length>=4&&text.value.length<=16&&reg.test(text.value)){
+                warn.innerHTML= '用户名合法';
+                warn.className= 'warn legalTips';
+            }
+            else{
+                warn.innerHTML= '用户名不合法';
+                warn.className= 'warn lllegalTips';
+            }
+        }
+        //验证密码合法性
+        function checkKey(text,warn){
+            var reg1=/1[0-5]{2}[6-9]{3}\w{2}/;
+            if(text.value.length==8&&reg1.test(text.value)){
+                warn.innerHTML= '密码合法';
+                warn.className= 'warn legalTips';    
+            }
+            else{
+                warn.innerHTML= '密码不合法';
+                warn.className= 'warn lllegalTips'; 
+            }
+        }
+        //验证密码是否一致
+        function recheckKey(key,text,warn){
+            var reg1=/1[0-5]{2}[6-9]{3}\w{2}/;
+            if(text.value.length==8&&reg1.test(text.value)&&text.value===key.value){
+                warn.innerHTML= '密码一致';
+                warn.className= 'warn legalTips';    
+            }
+            else{
+                warn.innerHTML= '密码不合法或不一致';
+                warn.className= 'warn lllegalTips'; 
+            }
+        }
+        //验证手机号码
+        
+        function checkTelophone(text,warn){
+            var reg2=/^1[3-9]\d{9}/;
+            if(text.value.length==11&&reg2.test(text.value)){
+                warn.innerHTML= '手机号码合法';
+                warn.className= 'warn legalTips';
+            }
+            else{
+                warn.innerHTML= '手机号码不合法';
+                warn.className= 'warn lllegalTips';
+            }
+        }
+        bto[0].onclick=function(){//注意该方法获取的元素为伪数组形式
+            checkUsername(text[0],warns[0]);
+            checkKey(text[1],warns[1]);
+            recheckKey(text[1],text[2],warns[2]);
+            checkTelophone(text[3],warns[3]);
+        }
+        
+       
+
+    </script>
+</body>
+</html>
